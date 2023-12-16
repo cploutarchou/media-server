@@ -7,7 +7,7 @@ from logging.handlers import RotatingFileHandler
 app = Flask(__name__)
 
 # Configuration
-UPLOAD_FOLDER = 'media'
+UPLOAD_FOLDER = '/home/media'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Logging Configuration
