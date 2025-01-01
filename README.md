@@ -32,6 +32,41 @@ This is a custom Flask-based web application that allows users to upload media f
 2. Build the Docker container using the provided Dockerfile.
 3. Run the container to start the application.
 
+## Docker Instructions
+
+### Building Docker Images
+
+1. Build the Flask application image:
+```bash
+docker build -t media-server:latest .
+```
+
+2. The Nginx image will be pulled automatically from Docker Hub when running docker-compose.
+
+### Running with Docker Compose
+
+```bash
+docker-compose up -d
+```
+
+This will start both the Flask application and Nginx reverse proxy containers.
+
+### Pushing Docker Images
+
+To push the image to your Docker repository:
+
+1. Tag the image with your repository name:
+```bash
+docker tag media-server:latest your-registry/media-server:latest
+```
+
+2. Push the image:
+```bash
+docker push your-registry/media-server:latest
+```
+
+Note: Replace `your-registry` with your actual Docker registry address.
+
 ## Configuration
 
 - The Flask app configuration can be modified in the `app/__init__.py` file.
